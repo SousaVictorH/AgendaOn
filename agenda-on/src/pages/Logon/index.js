@@ -8,7 +8,7 @@ export default function Logon(){
     const title = "<AgendaOn/>";
 
     return(
-        <div style={{backgroundImage: `url(require("assets/astronomy.jpg")`}} className="logon-container">
+        <div className="logon-container">
             <h1>{title}</h1>
             <section className="form">
                 <form>
@@ -21,15 +21,17 @@ export default function Logon(){
 
                     <div className="input-group">
                         <FiKey className="icon"/>
-                        <input type="text" placeholder="Password"/>
+                        <input type="Password" placeholder="Password"/>
                     </div>
 
-                    <button className="button" type="submit">Log In</button>
-
-                    <a href="/register">
-                        <FiLogIn size={18} color="black"/>
-                        Register
-                    </a>
+                    <div className="footer">
+                        <button className="button" type="submit">Log In</button>
+                        
+                        <a href="/register">
+                            <FiLogIn size={18} color="black"/>
+                            Register
+                        </a>
+                    </div>
                 </form>
             </section>
         </div>

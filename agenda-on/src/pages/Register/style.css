@@ -1,24 +1,23 @@
-.logon-container{
+.register-container{
     width: 100%;
     max-width: 1120px;
-    height: 60vh;
+    height: 70vh;
     margin: 0 auto;
 
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-
 }
 
-.logon-container h1{
+.register-container h1{
     font-size: 75px;
     font-weight: bold;
     margin-top: 15px;
     margin-bottom: 55px;
 }
 
-.logon-container section.form{
+.register-container section.form{
     width: 70%;
     max-width: 1350px;
     border: 1px solid black;
@@ -26,7 +25,7 @@
     padding: 25px;
 }
 
-.logon-container section.form h2{
+.register-container section.form h2{
     font-size: 40px;
     font-weight: bold;
     margin-top: 5px;
@@ -34,7 +33,7 @@
     margin-bottom: 45px;
 }
 
-.logon-container section.form input{
+.register-container section.form input{
     width: 95%;
     height: 45px;
     color: #333;
@@ -44,11 +43,22 @@
     margin-bottom: 8px;
 }
 
-.logon-container section.form .input-group{
+.register-container section.form .input-group{
     position: relative;
 }
 
-.logon-container section.form .icon{
+.s-input-group{
+    width: 100%;
+    display: flex;
+}
+
+.input-group .uf{
+    max-width: 100px;
+    margin-left: 10px;
+    margin-right: 30px;
+}
+
+.register-container section.form .icon{
     position: absolute;
     left: 5px;
     margin-top: 5px;
@@ -57,7 +67,7 @@
     background-color: white;
 }
 
-.logon-container .footer{
+.register-container .footer{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -65,7 +75,7 @@
     position: relative;
 }
 
-.logon-container .button{
+.register-container .button{
     width: 150px;
     height: 50px;
     margin-top: 15px;
@@ -78,11 +88,11 @@
     background-color: rgb(211, 211, 211);
 }
 
-.logon-container .button:hover{
+.register-container .button:hover{
     filter: brightness(90%);
 }
 
-.logon-container section.form a{
+.register-container section.form a{
     position: absolute;
     left: -15px;
     bottom: -15px;
@@ -96,6 +106,6 @@
     transition: .3s;
 }
 
-.logon-container section.form a:hover{
+.register-container section.form a:hover{
     opacity: 0.8;
 }
