@@ -3,12 +3,12 @@ import {Link} from "react-router-dom";
 
 import "./style.css";
 
-export default function Home(){
+export default function Remove(){
 
     const title = "<AgendaOn/>";
 
     return(
-            <div className="home-container">
+        <div className="remove-container">
                 <aside>
                     <header>
                         <h1>{title}</h1>
@@ -29,22 +29,22 @@ export default function Home(){
                 </aside>
 
                 <div className="main">
-                    <h1>Home</h1>
+                    <h1>Remove</h1>
 
                     <section className="form">
                         <form>
-                            <h2>Search for anotations</h2>
+                            <h2>Remove an anotation</h2>
 
                             <div className="input-group">
                                 <input type="date" placeholder="UserID"/>
                             </div>
 
                             <div className="footer">
-                                <button className="button" type="submit">Search</button>
+                                <button className="button" type="submit">Remove</button>
                             </div>
                         </form>
                     </section>
                 </div>
-            </div>
+        </div>
     );
 };

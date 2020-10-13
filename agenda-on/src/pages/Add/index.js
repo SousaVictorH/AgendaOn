@@ -8,7 +8,7 @@ export default function Home(){
     const title = "<AgendaOn/>";
 
     return(
-            <div className="home-container">
+        <div className="add-container">
                 <aside>
                     <header>
                         <h1>{title}</h1>
@@ -29,22 +29,22 @@ export default function Home(){
                 </aside>
 
                 <div className="main">
-                    <h1>Home</h1>
+                    <h1>Add</h1>
 
                     <section className="form">
                         <form>
-                            <h2>Search for anotations</h2>
+                            <h2>Add an anotation</h2>
 
                             <div className="input-group">
                                 <input type="date" placeholder="UserID"/>
                             </div>
 
                             <div className="footer">
-                                <button className="button" type="submit">Search</button>
+                                <button className="button" type="submit">Add</button>
                             </div>
                         </form>
                     </section>
                 </div>
-            </div>
+        </div>
     );
 };
