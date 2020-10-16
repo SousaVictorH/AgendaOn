@@ -30,20 +30,6 @@ export default function Home(){
 
                 <div className="main">
                     <h1>Home</h1>
-
-                    <section className="form">
-                        <form>
-                            <h2>Search for anotations</h2>
-
-                            <div className="input-group">
-                                <input type="date" placeholder="UserID"/>
-                            </div>
-
-                            <div className="footer">
-                                <button className="button" type="submit">Search</button>
-                            </div>
-                        </form>
-                    </section>
                 </div>
             </div>
     );

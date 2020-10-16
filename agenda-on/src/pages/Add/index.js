@@ -1,5 +1,6 @@
 import React from "react";
 import {Link} from "react-router-dom";
+import {FiEdit2, FiBookOpen} from "react-icons/fi";
 
 import "./style.css";
 
@@ -36,8 +37,17 @@ export default function Home(){
                             <h2>Add an anotation</h2>
 
                             <div className="input-group">
-                                <input type="date" placeholder="UserID"/>
-                                <textarea name="anotation" id="0" cols="30" rows="10"></textarea>
+                                <FiEdit2 className="icon"/>
+                                <input type="text" placeholder="title"/>
+                            </div>
+
+                            <div className="input-group">
+                                <FiBookOpen className="icon"/>
+                                <input type="text" placeholder="date"/>
+                            </div>
+
+                            <div className="input-group">
+                                <textarea name="anotation" placeholder="description" id="0" cols="30" rows="10"></textarea>
                             </div>
 
                             <div className="footer">

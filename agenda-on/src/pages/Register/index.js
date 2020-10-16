@@ -1,13 +1,13 @@
 import React, {useState} from "react";
 import {Link} from "react-router-dom";
-import {FiLogIn, FiMail, FiPhone, FiColumns, FiKey} from "react-icons/fi";
+import {FiLogIn, FiMail, FiPhone, FiColumns, FiEdit} from "react-icons/fi";
 
 import "./style.css";
 
 export default function Register(){
 
+    const [name, setName] = useState();
     const [email, setEmail] = useState();
-    const [password, setPassword] = useState();
     const [wpp, setWpp] = useState();
     const [city, setCity] = useState();
     const [uf, setUf] = useState();
@@ -23,17 +23,17 @@ export default function Register(){
                         <h2>Register</h2>
 
                         <div className="input-group">
+                            <FiEdit className="icon"/>
+
+                            <input type="text" placeholder="Name" name="userName"
+                            value={name} onChange={e => setName(e.target.value)}/>
+                        </div>
+
+                        <div className="input-group">
                             <FiMail className="icon"/>
 
                             <input type="text" placeholder="Email" name="userEmail"
                             value={email} onChange={e => setEmail(e.target.value)}/>
-                        </div>
-
-                        <div className="input-group">
-                            <FiKey className="icon"/>
-
-                            <input type="password" placeholder="Password" name="userPassword"
-                            value={password} onChange={e => setPassword(e.target.value)}/>
                         </div>
 
                         <div className="input-group">
@@ -47,10 +47,10 @@ export default function Register(){
                             <div className="s-input-group">
                                 <FiColumns className="icon"/>
 
-                                <input type="text" placeholder="Cidade*" name="userCity"
+                                <input type="text" placeholder="Cidade" name="userCity"
                                 value={city} onChange={e => setCity(e.target.value)}/>
 
-                                <input className="uf" type="text" placeholder="UF*" name="userUf"
+                                <input className="uf" type="text" placeholder="UF" name="userUf"
                                 value={uf} onChange={e => setUf(e.target.value)}/>
                             </div>
                         </div>

@@ -53,11 +53,27 @@ aside li:hover{
     opacity: 0.6;
 }
 
-/* erros */
+/* input */
 
-.form_error{
-    display: block;
-    color: red;
-    margin-top: 2px;
-    margin-bottom: 7px;
+section.form input{
+    width: 95%;
+    height: 45px;
+    color: #333;
+    border: 1px solid #dcdce6;
+    border-radius: 8px;
+    padding: 0 24px;
+    margin-bottom: 8px;
+}
+
+section.form .input-group{
+    position: relative;
+}
+
+section.form .icon{
+    position: absolute;
+    left: 5px;
+    margin-top: 5px;
+    margin-bottom: 0px;
+    height: 30px;
+    background-color: white;
 }
