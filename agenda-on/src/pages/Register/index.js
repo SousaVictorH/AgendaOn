@@ -1,10 +1,19 @@
-import React from "react";
-import {FiLogIn, FiMail, FiKey, FiPhone, FiColumns} from "react-icons/fi";
+import React, {useState} from "react";
+import {Link} from "react-router-dom";
+import {FiLogIn, FiMail, FiPhone, FiColumns, FiKey} from "react-icons/fi";
 
 import "./style.css";
 
 export default function Register(){
+
+    const [email, setEmail] = useState();
+    const [password, setPassword] = useState();
+    const [wpp, setWpp] = useState();
+    const [city, setCity] = useState();
+    const [uf, setUf] = useState();
+
     const title = "<AgendaOn/>";
+
     return(
         <div className="register">
             <div className="register-container">
@@ -15,34 +24,44 @@ export default function Register(){
 
                         <div className="input-group">
                             <FiMail className="icon"/>
-                            <input type="text" placeholder="Email"/>
-                        </div>
 
-                        <div className="input-group">
-                            <FiPhone className="icon"/>
-                            <input type="text" placeholder="Whatsapp"/>
+                            <input type="text" placeholder="Email" name="userEmail"
+                            value={email} onChange={e => setEmail(e.target.value)}/>
                         </div>
 
                         <div className="input-group">
                             <FiKey className="icon"/>
-                            <input type="Password" placeholder="Password"/>
+
+                            <input type="password" placeholder="Password" name="userPassword"
+                            value={password} onChange={e => setPassword(e.target.value)}/>
+                        </div>
+
+                        <div className="input-group">
+                            <FiPhone className="icon"/>
+
+                            <input type="text" placeholder="Whatsapp" name="userWpp"
+                            value={wpp} onChange={e => setWpp(e.target.value)}/>
                         </div>
 
                         <div className="input-group">
                             <div className="s-input-group">
                                 <FiColumns className="icon"/>
-                                <input type="text" placeholder="Cidade"/>
-                                <input className="uf" type="text" placeholder="UF"/>
+
+                                <input type="text" placeholder="Cidade*" name="userCity"
+                                value={city} onChange={e => setCity(e.target.value)}/>
+
+                                <input className="uf" type="text" placeholder="UF*" name="userUf"
+                                value={uf} onChange={e => setUf(e.target.value)}/>
                             </div>
                         </div>
 
                         <div className="footer">
                             <button className="button" type="submit">Register</button>
                             
-                            <a href="/">
+                            <Link to="/">
                                 <FiLogIn size={18} color="black"/>
-                                Log In
-                            </a>
+                                    Log In
+                            </Link>
                         </div>
                     </form>
                 </section>              

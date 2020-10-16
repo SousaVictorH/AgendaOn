@@ -1,5 +1,6 @@
 import React from "react";
-import {FiLogIn, FiUser, FiKey} from "react-icons/fi";
+import {Link} from "react-router-dom";
+import {FiKey, FiLogIn, FiUser} from "react-icons/fi";
 
 import "./style.css";
 
@@ -22,16 +23,17 @@ export default function Logon(){
 
                         <div className="input-group">
                             <FiKey className="icon"/>
-                            <input type="Password" placeholder="Password"/>
+                            <input type="password" placeholder="Password"/>
                         </div>
 
                         <div className="footer">
                             <button className="button" type="submit">Log In</button>
                             
-                            <a href="/register">
+
+                            <Link to="/register">
                                 <FiLogIn size={18} color="black"/>
-                                Register
-                            </a>
+                                    Register
+                            </Link>
                         </div>
                     </form>
                 </section>

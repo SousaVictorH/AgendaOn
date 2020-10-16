@@ -18,3 +18,46 @@ input, button, textarea{
 button{
     cursor: pointer;
 }
+
+/* ASIDE */
+
+aside{
+    width: 400px;
+    background: linear-gradient(329.54deg, #d8d8d8 0%, #8d8d8d 100%);
+    padding: 50px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+aside h1{
+    font-size: 48px;
+    font-weight: 800;
+    line-height: 42px;
+    margin-top: 64px;
+}
+
+aside p{
+    font-size: 18px;
+    line-height: 20px;
+    margin-top: 40px;
+    margin-bottom: 35px;
+}
+
+aside li{
+    margin-bottom: 12px;
+    transition: .2s;
+}
+
+aside li:hover{
+    opacity: 0.6;
+}
+
+/* erros */
+
+.form_error{
+    display: block;
+    color: red;
+    margin-top: 2px;
+    margin-bottom: 7px;
+}

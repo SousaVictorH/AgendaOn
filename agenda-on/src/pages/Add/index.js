@@ -23,7 +23,7 @@ export default function Home(){
                         <ul>
                             <li><Link to="/home">Procurar por anotações</Link></li>
                             <li><Link to="/home/add">Adicionar anotações</Link></li>
-                            <li><Link to="/home/remove">Remover anotações</Link></li>
+                            <li><Link to="/home">Remover anotações</Link></li>
                         </ul>
                     </footer>
                 </aside>
@@ -37,6 +37,7 @@ export default function Home(){
 
                             <div className="input-group">
                                 <input type="date" placeholder="UserID"/>
+                                <textarea name="anotation" id="0" cols="30" rows="10"></textarea>
                             </div>
 
                             <div className="footer">

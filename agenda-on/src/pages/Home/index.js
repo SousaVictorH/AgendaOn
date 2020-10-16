@@ -23,7 +23,7 @@ export default function Home(){
                         <ul>
                             <li><Link to="/home">Procurar por anotações</Link></li>
                             <li><Link to="/home/add">Adicionar anotações</Link></li>
-                            <li><Link to="/home/remove">Remover anotações</Link></li>
+                            <li><Link to="/home">Remover anotações</Link></li>
                         </ul>
                     </footer>
                 </aside>

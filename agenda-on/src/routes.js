@@ -5,7 +5,6 @@ import Logon from "./pages/Logon";
 import Register from "./pages/Register";
 import Home from "./pages/Home";
 import Add from "./pages/Add";
-import Remove from "./pages/Remove";
 
 export default function Routes(){
 
@@ -16,7 +15,6 @@ export default function Routes(){
                 <Route path="/register" component={Register}/>
                 <Route exact path="/home" component={Home}/>
                 <Route path="/home/add" component={Add}/>
-                <Route path="/home/remove" component={Remove}/>
             </Switch>
         </BrowserRouter>
     );
