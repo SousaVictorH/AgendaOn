@@ -1,10 +1,10 @@
 import React from "react";
 import {Link} from "react-router-dom";
-import {FiEdit2, FiBookOpen, FiLogOut} from "react-icons/fi";
+import {FiBookOpen, FiLogOut} from "react-icons/fi";
 
 import "./style.css";
 
-export default function Add(){
+export default function Search(){
 
     const title = "<AgendaOn/>";
 
@@ -30,28 +30,19 @@ export default function Add(){
                 </aside>
 
                 <div className="main">
-                    <h1>Add</h1>
+                    <h1>Search</h1>
 
                     <section className="form">
                         <form>
-                            <h2>Add an anotation</h2>
-
-                            <div className="input-group">
-                                <FiEdit2 className="icon"/>
-                                <input type="text" placeholder="title"/>
-                            </div>
+                            <h2>Search for an anotation</h2>
 
                             <div className="input-group">
                                 <FiBookOpen className="icon"/>
                                 <input type="text" placeholder="date"/>
                             </div>
 
-                            <div className="input-group">
-                                <textarea name="anotation" placeholder="description" id="0" cols="30" rows="10"></textarea>
-                            </div>
-
                             <div className="footer">
-                                <button className="button" type="submit">Add</button>
+                                <button className="button" type="submit">Search</button>
                             </div>
                         </form>
                     </section>

@@ -2,24 +2,53 @@ import React, {useState} from "react";
 import {Link} from "react-router-dom";
 import {FiLogIn, FiMail, FiPhone, FiColumns, FiEdit} from "react-icons/fi";
 
+import api from "../../services/api";
+
 import "./style.css";
 
 export default function Register(){
 
-    const [name, setName] = useState();
-    const [email, setEmail] = useState();
-    const [wpp, setWpp] = useState();
-    const [city, setCity] = useState();
-    const [uf, setUf] = useState();
+    async function handleRegister(e){
+
+        e.preventDefault();
+
+        const data = {
+            name,
+            email,
+            whatsapp,
+            city,
+            uf
+        };
+
+        try {
+
+            const response = await api.post("/users", data);
+            alert(`Seu ID de acesso: ${response.data.id}`);
+
+        } catch (error) {
+
+            alert("Erro no cadastro, tente novamente.")
+
+        }
+    }
+
+    const [name, setName] = useState('');
+    const [email, setEmail] = useState('');
+    const [whatsapp, setWhatsapp] = useState('');
+    const [city, setCity] = useState('');
+    const [uf, setUf] = useState('');
 
     const title = "<AgendaOn/>";
 
     return(
         <div className="register">
             <div className="register-container">
+
                 <h1>{title}</h1>
+
                 <section className="form">
-                    <form>
+
+                    <form onSubmit={handleRegister}>
                         <h2>Register</h2>
 
                         <div className="input-group">
@@ -40,7 +69,7 @@ export default function Register(){
                             <FiPhone className="icon"/>
 
                             <input type="text" placeholder="Whatsapp" name="userWpp"
-                            value={wpp} onChange={e => setWpp(e.target.value)}/>
+                            value={whatsapp} onChange={e => setWhatsapp(e.target.value)}/>
                         </div>
 
                         <div className="input-group">

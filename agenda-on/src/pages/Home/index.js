@@ -1,5 +1,6 @@
 import React from "react";
 import {Link} from "react-router-dom";
+import {FiLogOut} from "react-icons/fi";
 
 import "./style.css";
 
@@ -8,7 +9,7 @@ export default function Home(){
     const title = "<AgendaOn/>";
 
     return(
-            <div className="home-container">
+            <div className="container">
                 <aside>
                     <header>
                         <h1>{title}</h1>
@@ -21,15 +22,22 @@ export default function Home(){
                     <footer>
                         <p>Inclui funcionalidade como:</p>
                         <ul>
-                            <li><Link to="/home">Procurar por anotações</Link></li>
+                            <li><Link to="/home">Listar anotações</Link></li>
+                            <li><Link to="/home/search">Procurar por anotações</Link></li>
                             <li><Link to="/home/add">Adicionar anotações</Link></li>
-                            <li><Link to="/home">Remover anotações</Link></li>
                         </ul>
                     </footer>
                 </aside>
 
                 <div className="main">
                     <h1>Home</h1>
+                    
+
+                    
+                    <Link to="/">
+                        <FiLogOut className="logout" size={55}/>
+                    </Link>
+                    
                 </div>
             </div>
     );

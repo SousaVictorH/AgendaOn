@@ -32,7 +32,7 @@ export default function Logon(){
                         </div>
                     </form>
                 </section>
-            </div>'
+            </div>
         </div>
     );
 };

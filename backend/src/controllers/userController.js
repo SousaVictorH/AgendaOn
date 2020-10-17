@@ -13,6 +13,8 @@ module.exports = {
 
     async create(req, res){
 
+        console.log("OK");
+
         const { name, email, whatsapp, city, uf }  = req.body;
     
         const id = crypto.randomBytes(4).toString("HEX");

@@ -53,6 +53,24 @@ module.exports = {
         await connection("anotations").where("id", id).delete();
 
         return res.status(204).send();
+    },
+
+    async search(req, res){
+
+        const {date} = req.params;
+
+        const {page=1} = req.query;
+
+        const anotations = await connection('anotations')
+        .where("date", date)
+        .join('users', "user_id", "=", "anotations.user_id")
+        .limit(5)
+        .offset((page-1)*5)
+        .select(['anotations.*', "users.name", "users.email", 
+        "users.whatsapp", "users.city", "users.uf"]);
+
+        return res.json(anotations);
+
     }
 
 }
