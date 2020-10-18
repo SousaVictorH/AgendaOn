@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import {Link} from "react-router-dom";
+import {Link, useHistory} from "react-router-dom";
 import {FiLogIn, FiMail, FiPhone, FiColumns, FiEdit} from "react-icons/fi";
 
 import api from "../../services/api";
@@ -7,6 +7,8 @@ import api from "../../services/api";
 import "./style.css";
 
 export default function Register(){
+
+    const history = useHistory();
 
     async function handleRegister(e){
 
@@ -24,6 +26,8 @@ export default function Register(){
 
             const response = await api.post("/users", data);
             alert(`Seu ID de acesso: ${response.data.id}`);
+
+            history.push("/");
 
         } catch (error) {
 

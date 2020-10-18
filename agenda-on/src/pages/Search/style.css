@@ -1,0 +1,33 @@
+button{
+    margin-bottom: 50px;
+}
+
+.home-container h2{
+    font-size: 32px;
+    font-weight: bold;
+    margin-top: 5px;
+    margin-left: 5px;
+    margin-bottom: 45px;
+}
+
+.home-container .input-group{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.home-container .input-group input{
+    width: 95%;
+    height: 45px;
+    color: #333;
+    border: 1px solid #dcdce6;
+    border-radius: 8px;
+    padding: 0 24px;
+    margin-bottom: 8px;
+}
+
+.home-container .icon{
+    position: absolute;
+    top: 15px;
+    left: 5px;
+}

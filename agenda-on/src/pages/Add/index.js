@@ -1,18 +1,55 @@
-import React from "react";
-import {Link} from "react-router-dom";
-import {FiEdit2, FiBookOpen, FiLogOut} from "react-icons/fi";
+import React, {useState} from "react";
+import {Link, useHistory} from "react-router-dom";
+import {FiEdit2, FiBookOpen} from "react-icons/fi";
+
+import api from "../../services/api";
 
 import "./style.css";
 
 export default function Add(){
 
-    const title = "<AgendaOn/>";
+    const history = useHistory();
+
+    async function handleAdd(e){
+
+        e.preventDefault();
+
+        const userID = localStorage.getItem("userID");
+
+        const data = {
+            title,
+            description,
+            date
+        }
+
+        try {
+
+            await api.post("anotations",data, {
+                headers:{
+                    authorization: userID,
+                }
+            });
+
+            history.push("/home");
+
+        } catch (error) {
+
+            alert("Erro, tente novamente.")
+
+        }
+    }
+
+    const [title, setTitulo] = useState("");
+    const [date, setDate] = useState("");
+    const [description, setDescription] = useState("");
+
+    const title2 = "<AgendaOn/>";
 
     return(
         <div className="container">
                 <aside>
                     <header>
-                        <h1>{title}</h1>
+                        <h1>{title2}</h1>
 
                         <p>Aqui você pode escrever lembretes referentes 
                             a um determinado dia, como em uma agenda!
@@ -32,22 +69,25 @@ export default function Add(){
                 <div className="main">
                     <h1>Add</h1>
 
-                    <section className="form">
+                    <section className="form" onSubmit={handleAdd}>
                         <form>
                             <h2>Add an anotation</h2>
 
                             <div className="input-group">
                                 <FiEdit2 className="icon"/>
-                                <input type="text" placeholder="title"/>
+                                <input type="text" placeholder="title"
+                                value={title} onChange={e => setTitulo(e.target.value)}/>
                             </div>
 
                             <div className="input-group">
                                 <FiBookOpen className="icon"/>
-                                <input type="text" placeholder="date"/>
+                                <input type="text" placeholder="date"
+                                value={date} onChange={e => setDate(e.target.value)}/>
                             </div>
 
                             <div className="input-group">
-                                <textarea name="anotation" placeholder="description" id="0" cols="30" rows="10"></textarea>
+                                <textarea name="anotation" placeholder="description" id="0" cols="30" rows="10"
+                                value={description} onChange={e => setDescription(e.target.value)}></textarea>
                             </div>
 
                             <div className="footer">
@@ -56,9 +96,6 @@ export default function Add(){
                         </form>
                     </section>
 
-                    <Link to="/">
-                        <FiLogOut className="logout" size={55}/>
-                    </Link>
                 </div>
         </div>
     );

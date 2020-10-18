@@ -1,15 +1,64 @@
-import React from "react";
+import React, {useState} from "react";
 import {Link} from "react-router-dom";
-import {FiBookOpen, FiLogOut} from "react-icons/fi";
+import {FiTrash2, FiBookOpen} from "react-icons/fi";
+
+import api from "../../services/api";
 
 import "./style.css";
 
-export default function Search(){
+export default function Home(){
+
+    const [date, setDate] = useState("");
+    const [anotations, setAnotataions] = useState([]);
+
+    const userID = localStorage.getItem("userID");
 
     const title = "<AgendaOn/>";
 
+    async function handleSearch(e){
+
+        e.preventDefault();
+
+        const data = {
+            date
+        }
+
+        console.log({
+            date
+        })
+
+        await api.get("search",data, {
+            headers:{
+                authorization: userID,
+            }
+        }).then(response => {
+
+            setAnotataions(response.data);
+
+        })
+
+    }
+
+    async function handleDelete(id){
+
+        try {
+            
+            await api.delete(`anotations/${id}`,{
+                headers: {
+                    authorization: userID,
+                }
+            })
+
+            setAnotataions(anotations.filter(anotation => anotation.id !== id));
+
+        } catch (error) {
+            alert("Erro ao deletar anotação, tente novamente!")
+        }
+
+    };
+
     return(
-        <div className="container">
+            <div className="container">
                 <aside>
                     <header>
                         <h1>{title}</h1>
@@ -29,28 +78,44 @@ export default function Search(){
                     </footer>
                 </aside>
 
-                <div className="main">
+                <div className="main home-container">
                     <h1>Search</h1>
 
-                    <section className="form">
-                        <form>
-                            <h2>Search for an anotation</h2>
-
+                    <section>
+                        <form onSubmit={handleSearch}>
                             <div className="input-group">
                                 <FiBookOpen className="icon"/>
-                                <input type="text" placeholder="date"/>
+                                <input type="text" placeholder="date"
+                                value={date} onChange={e => setDate(e.target.value)}/>
                             </div>
 
                             <div className="footer">
-                                <button className="button" type="submit">Search</button>
+
+                            <button className="button" type="submit">Search</button>
+
                             </div>
                         </form>
                     </section>
+                    
+                    <ul>
+                        {anotations.map(anotation => {
 
-                    <Link to="/">
-                        <FiLogOut className="logout" size={55}/>
-                    </Link>
+                            return(
+                                <li key={anotation.id}>
+                                    <strong>{anotation.title}</strong>
+                                    <p>{anotation.description}</p>
+                                    <p>{anotation.date}</p>
+
+                                    <button onClick={() => handleDelete(anotation.id)} type="button">
+                                        <FiTrash2 size={20}/>
+                                    </button>
+                                </li>
+                            )
+
+                        })}
+                    </ul>
+                    
                 </div>
-        </div>
+            </div>
     );
 };
