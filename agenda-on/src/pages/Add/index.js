@@ -67,11 +67,11 @@ export default function Add(){
                 </aside>
 
                 <div className="main">
-                    <h1>Add</h1>
+                    <h1>Add an anotation</h1>
 
                     <section className="form" onSubmit={handleAdd}>
                         <form>
-                            <h2>Add an anotation</h2>
+                            <h2>Add</h2>
 
                             <div className="input-group">
                                 <FiEdit2 className="icon"/>
@@ -81,7 +81,7 @@ export default function Add(){
 
                             <div className="input-group">
                                 <FiBookOpen className="icon"/>
-                                <input type="text" placeholder="date"
+                                <input type="text" placeholder="xx/xx/xxxx"
                                 value={date} onChange={e => setDate(e.target.value)}/>
                             </div>
 

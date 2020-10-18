@@ -25,13 +25,6 @@ module.exports = {
         const { title, description, date }  = req.body;
     
         const user_id = req.headers.authorization;
-
-        console.log({
-            title,
-            description,
-            date,
-            user_id
-        })
     
         const result = await connection('anotations').insert({
             title,

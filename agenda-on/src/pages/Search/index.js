@@ -23,11 +23,9 @@ export default function Home(){
             date
         }
 
-        console.log({
-            date
-        })
+        console.log(data)
 
-        await api.get("search",data, {
+        await api.post("search",data, {
             headers:{
                 authorization: userID,
             }
@@ -78,14 +76,15 @@ export default function Home(){
                     </footer>
                 </aside>
 
-                <div className="main home-container">
-                    <h1>Search</h1>
+                <div className="main search-container">
+                    <h1>Search for an anotation</h1>
 
-                    <section>
+                    <section className="form">
+                        <h2>Search</h2>
                         <form onSubmit={handleSearch}>
                             <div className="input-group">
                                 <FiBookOpen className="icon"/>
-                                <input type="text" placeholder="date"
+                                <input type="text" placeholder="xx/xx/xxxx"
                                 value={date} onChange={e => setDate(e.target.value)}/>
                             </div>
 
@@ -102,8 +101,14 @@ export default function Home(){
 
                             return(
                                 <li key={anotation.id}>
-                                    <strong>{anotation.title}</strong>
+                                    
+                                    <strong>Titulo:</strong>
+                                    <p>{anotation.title}</p>
+
+                                    <strong>Descricao:</strong>
                                     <p>{anotation.description}</p>
+
+                                    <strong>Data:</strong>
                                     <p>{anotation.date}</p>
 
                                     <button onClick={() => handleDelete(anotation.id)} type="button">

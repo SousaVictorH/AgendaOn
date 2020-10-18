@@ -80,15 +80,21 @@ export default function Home(){
                 </aside>
 
                 <div className="main home-container">
-                    <h1>Bem vindo(a), {userName}</h1>
+                    <h1>Welcome, {userName}</h1>
                     
                     <ul>
                         {anotations.map(anotation => {
 
                             return(
                                 <li key={anotation.id}>
-                                    <strong>{anotation.title}</strong>
+                                    
+                                    <strong>Titulo:</strong>
+                                    <p>{anotation.title}</p>
+
+                                    <strong>Descricao:</strong>
                                     <p>{anotation.description}</p>
+
+                                    <strong>Data:</strong>
                                     <p>{anotation.date}</p>
 
                                     <button onClick={() => handleDelete(anotation.id)} type="button">

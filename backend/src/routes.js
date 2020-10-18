@@ -16,7 +16,7 @@ routes.get("/anotations", anotationController.index);
 routes.post("/anotations", anotationController.create);
 routes.delete("/anotations/:id", anotationController.delete);
 
-routes.get("/search", profileController.search);
+routes.post("/search", profileController.search);
 routes.get("/profile", profileController.index);
 
 module.exports = routes;
