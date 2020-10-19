@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import {Link, useHistory} from "react-router-dom";
-import {FiEdit2, FiBookOpen} from "react-icons/fi";
+import {FiEdit2} from "react-icons/fi";
 
 import api from "../../services/api";
 
@@ -80,8 +80,7 @@ export default function Add(){
                             </div>
 
                             <div className="input-group">
-                                <FiBookOpen className="icon"/>
-                                <input type="text" placeholder="xx/xx/xxxx"
+                                <input type="date" placeholder="xx/xx/xxxx"
                                 value={date} onChange={e => setDate(e.target.value)}/>
                             </div>
 
