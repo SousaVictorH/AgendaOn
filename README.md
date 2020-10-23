@@ -4,6 +4,28 @@ A project made with React e NodeJs.
 ## :question: About the project
 
 The main goal of this project is to improve my skills with Javascript, React, Node and SQLite. <AgendaOn> was created to be an offline application that helps you to keeptrack of your tasks. Because of this you can create reminders for a certain date.
+  
+### :iphone: Here's a few snapshots of the app:
+  
+<div>
+  <h3>Register Yourself</h4>
+  <img src="https://github.com/SousaVictorH/AgendaOn/blob/master/agenda-on/public/images/register.png" alt="Register">
+</div>
+
+<div>
+  <h3>Add an anotation</h3>
+  <img src="https://github.com/SousaVictorH/AgendaOn/blob/master/agenda-on/public/images/add.png" alt="Add">
+</div>
+
+<div>
+  <h3>List your anotations</h3>
+  <img src="https://github.com/SousaVictorH/AgendaOn/blob/master/agenda-on/public/images/list.png" alt="List">
+</div>
+
+<div>
+  <h3>Search for an anotation</h3>
+  <img src="https://github.com/SousaVictorH/AgendaOn/blob/master/agenda-on/public/images/search.png" alt="Seacrh">
+</div>
 
 ###  :hammer: Made with
 
