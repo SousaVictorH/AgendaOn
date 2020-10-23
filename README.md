@@ -37,7 +37,13 @@ npx react-native run-android
 npx knex migrate:latest
 ```
 
-4. Then, you're ready to get started.
+4. *Want to run tests?
+
+```sh
+npm tests
+```
+
+5. Then, you're ready to get started.
 
 
 ## :computer: Contributing
